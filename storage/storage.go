@@ -3,6 +3,7 @@ package storage
 import (
 	err2 "awesomeProject4/lib/err"
 	"crypto/sha1"
+	"errors"
 	"fmt"
 	"io"
 )
@@ -13,6 +14,8 @@ type Storage interface {
 	Remove(p *Page) error
 	IsExists(p *Page) (bool, error)
 }
+
+var ErrNoSavedPages = errors.New("No saved pages")
 
 type Page struct {
 	URL      string
