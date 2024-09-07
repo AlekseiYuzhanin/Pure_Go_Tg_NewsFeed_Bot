@@ -9,7 +9,6 @@ import (
 	"log"
 )
 
-// 7518956179:AAEgEMMtXooApEtke6ojZmpu5forLOBAA34
 const (
 	tgBotApi    = "api.telegram.org"
 	storagePath = "files_storage"
