@@ -12,9 +12,6 @@ const (
 
 func main() {
 
-	//TODO: consumer start
-
-	//TODO: init telegram bot(token)
 	tgClient := telegram.New(tgBotApi, mustToken())
 }
 
