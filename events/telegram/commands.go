@@ -48,7 +48,7 @@ func (p *Processor) savePage(chatID int, pageURL string, username string) (err e
 		return err
 	}
 	if isExists {
-		return p.tg.SendMessage(chatID, "Already exists")
+		return p.tg.SendMessage(chatID, msgAlreadyExists)
 	}
 
 	if err = p.storage.Save(page); err != nil {

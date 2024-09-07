@@ -11,8 +11,8 @@ Caution! After that, this page will be removed from your list!
 const msgHello = "Hi there :grin:! \n\n" + msgHelp
 
 const (
-	msgUnknownCommand = "Unknown command :poo:"
-	msgNoSavedPages   = "No saved pages :poo:"
-	msgSaved          = "Saved :smiling_imp:"
-	msgAlreadyExists  = "You already have a page with that name. :poo:"
+	msgUnknownCommand = "Unknown command 💩"
+	msgNoSavedPages   = "No saved pages 💩"
+	msgSaved          = "Saved 😮"
+	msgAlreadyExists  = "You already have a page with that name. 🤡"
 )
