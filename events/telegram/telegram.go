@@ -9,6 +9,7 @@ import (
 )
 
 var ErrUnknown = errors.New("unknown event")
+var ErrUnknownMeta = errors.New("unknown meta")
 
 type Processor struct {
 	tg      *telegram.Client
@@ -59,8 +60,19 @@ func (p *Processor) Process(event events.Event) error {
 	}
 }
 
-func (p *Processor) processMessage(event events.Event) {
+func (p *Processor) processMessage(event events.Event) error {
+	meta, err := meta(event)
+	if err != nil {
+		return err2.Wrap(err, "cant process message")
+	}
+}
 
+func meta(event events.Event) (Meta, error) {
+	res, ok := event.Meta.(Meta)
+	if !ok {
+		return Meta{}, ErrUnknownMeta
+	}
+	return res, nil
 }
 
 func event(update telegram.Update) events.Event {
